@@ -1,0 +1,15 @@
+{
+  "name": "rbcom-responsive-iframe-example",
+  "version": "1.0.0",
+  "description": "Example repo to create a responsive iframe",
+  "main": "index.html",
+  "author": "Red Bull Media House",
+  "license": "MIT",
+  "scripts": {
+    "install": "openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem",
+    "serve": "http-server --ssl"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

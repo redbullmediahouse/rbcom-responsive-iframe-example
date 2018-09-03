@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive iFrame</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        var canvas;
+        var uri = escape(window.location.href);
+        function setHeight(height) {
+            return canvas && canvas.source.postMessage("RedBullCanvas:setHeight:" + uri + ":" + height, "*");
+        }
+        function resize() {
+            return setHeight(document.body.clientHeight);
+        }
+        function handleMessage(message) {
+            if (/^RedBullCanvas:welcome/.test(message.data)) {
+                canvas = {
+                    source: message.source,
+                    origin: message.origin
+                };
+                return resize();
+            }
+        }
+        window.addEventListener("message", handleMessage);
+        window.addEventListener("resize", resize);
+        window.parent.postMessage("RedBullCanvas:init:" + uri, "*");
+    </script>
+</head>
+<body>
+<main>
+    <h1>These tips from high-achieving athletes could help you score big life goals</h1>
+
+    <p>Ever wondered how athletes remain calm under pressure? We asked them for some advice that might help you beat stress, tame anxiety and take on bigger and more ambitious challenges.</p>
+    <p>Adventurers, explorers, survival experts and endurance athletes make a career out of subjecting themselves to extreme situations, meaning they’re highly skilled at dealing with the issues most of us find tough. We decided to ask them about the psychological tools and techniques they use to cope at the very limits of their capabilities, so scroll down to get some tips that could make you better equipped to survive the trials and tribulations of your day-to-day life.</p>
+    <p>Avoiding risk can hinder our progression, professionally and personally. But, says Guillaume Galvani – the Frenchman who, to achieve the stunning opening shot for this article, hung from a paraglider more than 2,000m above the Aegean Sea near Oludeniz, Turkey, before parajumping off – risk is something anyone can manage. And the results, whether getting a promotion or finishing a marathon, can be great.</p>
+    <p>“I’m not Superman,” says Galvani. “I’m just an everyday guy living his dream of flying like a bird.” Risk, he says, can be diminished if you’re willing to put in the time and effort. “With aerial sport comes risk. But risk can be assessed, appraised and even avoided. Would you scale a mountain with no experience? No. But if you develop skills in a controlled way that’s tailored to your mental and physical qualities, you end up with ideas, analyses and experience of how to manage risk and know your limits.”</p>
+
+</main>
+</body>
+</html>

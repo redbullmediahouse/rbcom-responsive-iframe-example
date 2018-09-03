@@ -1,0 +1,29 @@
+node_modules
+logs
+npm-debug.log
+yarn-error.log
+reports
+
+# ssl certificates
+/cert.pem
+/key.pem
+
+#OS trash
+.DS_Store
+
+#Sublime project files
+*.sublime-workspace
+*.sublime-project
+
+#IDEA project files
+*.idea
+*.iml
+
+#VIM Swap files
+*.swp
+
+# Configs
+configs
+
+.vimrc
+.vscode
